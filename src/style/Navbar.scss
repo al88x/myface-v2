@@ -1,0 +1,18 @@
+@import "general";
+
+.nav-bar-list{
+  display: flex;
+  line-height: $nav-height;
+  margin-left: $margin;
+  list-style-type: none;
+}
+
+.nav-element{
+  font-size: 20px;
+  color: lightgray;
+  margin-right: $margin;
+
+  &:hover{
+    color:grey;
+  }
+}
