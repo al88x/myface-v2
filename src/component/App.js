@@ -2,8 +2,8 @@ import React from 'react';
 import '../style/App.scss';
 import {Navbar} from "./Navbar";
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
-import {Posts} from "./Posts";
-import {Users} from "./Users";
+import {AllPosts} from "./AllPosts";
+import {AllUsers} from "./AllUsers";
 
 function App() {
     return (
@@ -14,10 +14,10 @@ function App() {
                     <Navbar/>
                         <Switch>
                             <Route path="/posts">
-                                <Posts />
+                                <AllPosts />
                             </Route>
                             <Route path="/users">
-                                <Users />
+                                <AllUsers />
                             </Route>
                         </Switch>
                     </div>
