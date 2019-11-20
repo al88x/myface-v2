@@ -1,0 +1,45 @@
+@import "general";
+
+.user-container{
+  max-width: 80%;
+  min-height: 30vw;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-image{
+  width: 100%;
+  height: auto;
+}
+
+.user-profile-image{
+  width: 15%;
+  height: auto;
+  position: absolute;
+  top:0;
+  margin-top: 20%;
+  left: 0;
+  margin-left: 10%;
+  border: 2px solid white;
+}
+
+.user-display-name{
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+.user-info{
+  position:absolute;
+  top:0;
+  left: 0;
+  margin-top: 26%;
+  margin-left: 27%;
+}
+
+.user-details{
+  color: darkgrey;
+  font-size: 1.5vw;
+}

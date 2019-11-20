@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import '../style/Post.scss';
 import moment from "moment";
 
 export default function Post(props) {
-
+    const messageBox = useRef(null);
+    const contentBox = useRef(null);
     const senderName = props.children.sender.firstName + " " + props.children.sender.lastName;
-
+    const [contentHeight, setContentHeight] = useState({height: "574px"});
 
     const postedDateTime = () => {
 
@@ -21,20 +22,36 @@ export default function Post(props) {
         return timePosted.format('ll');
     };
 
+    function changeContentHeight() {
+        const messageHeight = messageBox.current.clientHeight;
+        let currentContentHeight = contentBox.current.clientHeight;
+
+        if (messageHeight > 100) {
+            currentContentHeight += messageHeight - 85;
+        }
+        setContentHeight({height: `${currentContentHeight-10}px`});
+    }
+
+    function defaultContentHeight(){
+        setContentHeight({height: "574px"});
+    }
+
 
     return (
-        <div className="post">
-            <img className="post-image" src={props.children.image} alt="post"/>
-            <div className="metadata">
+        <div className="post" onMouseEnter={changeContentHeight} onMouseLeave={defaultContentHeight}>
+            <div className="content" ref={contentBox} style={contentHeight} >
+                <img className="post-image" src={props.children.image} alt="post"/>
+                <div className="metadata">
 
-                <div className="user">
-                    <img className="profile-image" src={props.children.sender.profileImage} alt="profile"/>
-                    <div className="name-date">
-                        <p className="sender-name">{senderName}</p>
-                        <p className="posted-at">{postedDateTime()}</p>
+                    <div className="user">
+                        <img className="profile-image" src={props.children.sender.profileImage} alt="profile"/>
+                        <div className="name-date">
+                            <p className="sender-name">{senderName}</p>
+                            <p className="posted-at">{postedDateTime()}</p>
+                        </div>
                     </div>
+                    <p className="message" ref={messageBox}>{props.children.message}</p>
                 </div>
-                <p className="message">{props.children.message}</p>
             </div>
         </div>);
 }

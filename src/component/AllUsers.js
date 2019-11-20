@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import User from "./User";
+import '../style/AllUsers.scss'
 
 export function AllUsers(){
     const [hasError, setErrors] = useState("");
@@ -27,8 +28,8 @@ export function AllUsers(){
     }
 
     return (
-        <ul>
+        <ol className="users-list">
             {users.map(user => <User>{user}</User>)};
-        </ul>
+        </ol>
     );
 };

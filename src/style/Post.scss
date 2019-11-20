@@ -3,11 +3,24 @@
 .post{
   width: $max-width;
   margin: 0 10px 10px 0;
+  padding-bottom: 10px;
   opacity: 70%;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
 
   &:hover{
     opacity: 100%;
   }
+
+}
+
+.content{
+  background-color: white;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  transition: height 0.5s ease;
 
 }
 
@@ -60,4 +73,14 @@
 
 .message{
   padding: 10px 0px;
+  //height: 55px;
+  //overflow: hidden;
+  margin-bottom: 10px;
+  transition: height 0.5s;
+  //
+  //&:hover{
+  //  height: 110px;
+  //  overflow: visible;
+  //}
 }
+

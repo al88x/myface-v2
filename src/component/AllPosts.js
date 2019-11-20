@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Post from "./Post";
-import '../style/Posts.scss'
-
+import '../style/AllPosts.scss'
 
 
 export function AllPosts() {
@@ -31,7 +30,7 @@ export function AllPosts() {
 
     return (
         <ul className="posts-list">
-            {posts.map(post => <Post>{post}</Post>)};
+            {posts.map(post => <Post>{post}</Post>)}
         </ul>
     );
 };
