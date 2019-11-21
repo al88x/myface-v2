@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react";
 import '../style/Post.scss';
 import moment from "moment";
+import {Link} from 'react-router-dom';
 
 export default function Post(props) {
     const messageBox = useRef(null);
@@ -46,7 +47,7 @@ export default function Post(props) {
                     <div className="user">
                         <img className="profile-image" src={props.children.sender.profileImage} alt="profile"/>
                         <div className="name-date">
-                            <p className="sender-name">{senderName}</p>
+                            <Link to={`/users/${props.children.sender.id}`} className="sender-name">{senderName}</Link>
                             <p className="posted-at">{postedDateTime()}</p>
                         </div>
                     </div>

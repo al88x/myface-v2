@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Post from "./Post";
+
 import '../style/AllPosts.scss'
+import {Link} from "react-router-dom";
 
 
 export function AllPosts() {
@@ -31,6 +33,7 @@ export function AllPosts() {
     return (
         <ul className="posts-list">
             {posts.map(post => <Post>{post}</Post>)}
+            <Link to={"/posts/create"} className="allPosts-create">+</Link>
         </ul>
     );
 };

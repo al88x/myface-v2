@@ -1,10 +1,29 @@
 @import "general";
 
-.posts-list{
+.posts-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.allPosts-create {
 
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background: #105245;
+  text-align: center;
+  line-height: 60px;
+  color: grey;
+  font-size: 50px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+    font-size: 60px;
+  }
+}
